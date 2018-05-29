@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="CadastrarContaForm" type="br.com.ufc.banco.struts.form.CadastrarContaForm" />
+		<form-bean name="ConsultarBonusContaForm" type="br.com.ufc.banco.struts.form.ConsultarBonusContaForm" />
+		<form-bean name="ConsultarSaldoContaForm" type="br.com.ufc.banco.struts.form.ConsultarSaldoContaForm" />
+		<form-bean name="CreditarDebitarContaForm" type="br.com.ufc.banco.struts.form.CreditarDebitarContaForm" />
+		<form-bean name="ExcluirContaForm" type="br.com.ufc.banco.struts.form.ExcluirContaForm" />
+		<form-bean name="RenderBonusContaForm" type="br.com.ufc.banco.struts.form.RenderBonusContaForm" />
+		<form-bean name="RenderJurosContaForm" type="br.com.ufc.banco.struts.form.RenderJurosContaForm" />
+		<form-bean name="TransferirContaForm" type="br.com.ufc.banco.struts.form.TransferirContaForm" />
+	</form-beans>
+
+	<global-exceptions></global-exceptions>
+
+	<global-forwards></global-forwards>
+
+	<action-mappings>
+
+		<action path="/CadastrarConta"
+				type="br.com.ufc.banco.struts.action.CadastrarContaAction"
+				name="CadastrarContaForm" 
+				input="/pages/cadastrarConta.jsp"
+				scope="request" 
+				parameter="method">
+			<forward name="result" path="/pages/resultadoCadastrarConta.jsp" />
+		</action>
+
+		<action path="/ConsultarBonusConta"
+				type="br.com.ufc.banco.struts.action.ConsultarBonusContaAction"
+				name="ConsultarBonusContaForm" 
+				input="/pages/consultarBonusConta.jsp"
+				scope="request" 
+				parameter="method">
+			<forward name="result" path="/pages/resultadoConsultarBonusConta.jsp" />
+		</action>
+
+		<action path="/ConsultarSaldoConta"
+				type="br.com.ufc.banco.struts.action.ConsultarSaldoContaAction"
+				name="ConsultarSaldoContaForm" 
+				input="/pages/consultarSaldoConta.jsp"
+				scope="request" 
+				parameter="method">
+			<forward name="result" path="/pages/resultadoConsultarSaldoConta.jsp" />
+		</action>
+
+		<action path="/CreditarDebitarConta"
+				type="br.com.ufc.banco.struts.action.CreditarDebitarContaAction"
+				name="CreditarDebitarContaForm" 
+				input="/pages/creditarDebitarConta.jsp"
+				scope="request" 
+				parameter="method">
+			<forward name="result" path="/pages/resultadoCreditarDebitarConta.jsp" />
+		</action>
+		
+		<action path="/ExcluirConta"
+				type="br.com.ufc.banco.struts.action.ExcluirContaAction"
+				name="ExcluirContaForm" 
+				input="/pages/excluirConta.jsp"
+				scope="request" 
+				parameter="method">
+			<forward name="result" path="/pages/resultadoExcluirConta.jsp" />
+		</action>
+		
+		<action path="/RenderBonusConta"
+				type="br.com.ufc.banco.struts.action.RenderBonusContaAction"
+				name="RenderBonusContaForm" 
+				input="/pages/renderBonusConta.jsp"
+				scope="request" 
+				parameter="method">
+			<forward name="result" path="/pages/resultadoRenderBonusConta.jsp" />
+		</action>
+
+		<action path="/RenderJurosConta"
+				type="br.com.ufc.banco.struts.action.RenderJurosContaAction"
+				name="RenderJurosContaForm" 
+				input="/pages/renderJurosConta.jsp"
+				scope="request" 
+				parameter="method">
+			<forward name="result" path="/pages/resultadoRenderJurosConta.jsp" />
+		</action>
+
+		<action path="/TransferirConta"
+				type="br.com.ufc.banco.struts.action.TransferirContaAction"
+				name="TransferirContaForm" 
+				input="/pages/transferirConta.jsp"
+				scope="request" 
+				parameter="method">
+			<forward name="result" path="/pages/resultadoTransferirConta.jsp" />
+		</action>
+
+	</action-mappings>
+
+	<controller	processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+
+	<message-resources parameter="MessageResources" />
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<!-- Path to XML definition file -->
+		<set-property property="definitions-config"
+			value="/WEB-INF/tiles-defs.xml" />
+		<!-- Set Module-awareness to true -->
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+
+</struts-config>

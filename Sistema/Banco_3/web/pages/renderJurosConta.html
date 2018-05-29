@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Banco  -  MVC2/JDBC</title>
+    </head>
+    <body>
+       	ETI - Especialização em Tecnologia da Informação<br/>
+    	UFC - Universidade Federal do Ceará
+
+    	<h1>Render Juros Conta</h1>
+    	<hr/>
+    	<form name="conta" action="/banco_3/servlet/FrontControllerServlet" method="post">
+    		<input type="hidden" name="method" value="renderJuros"/>
+    		<table>
+    			<tr>
+    				<td>Conta</td>
+    				<td>
+    					<input type="text" name="numeroConta"/>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>Juros</td>
+    				<td>
+    					<input type="text" name="valorJuros"/>
+    				</td>
+    			</tr>
+    		</table>
+    		<input type="button" name="btnRenderJuros" value="Render Juros" onclick="submit();"/>
+    		<input type="button" name="btnLimpar" value="Limpar" onclick="limpar();"/>
+    		<br/>
+			<br/>
+    		<a href="/banco_3/index.html">Menu Principal</a>
+    	</form>
+    </body>
+    <script type="text/javascript" language="javascript">
+        function limpar(){
+    		document.forms[0].elements["numeroConta"].value = "";
+    		document.forms[0].elements["valorJuros"].value = "";
+    	}
+    </script>
+</html>

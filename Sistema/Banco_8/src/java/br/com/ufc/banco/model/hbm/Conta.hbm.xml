@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.ufc.banco.model.Conta" table="conta" discriminator-value="C">
+
+		<id name="numero" column="numero"/>
+		<discriminator column="tipo"/>
+		<property name="saldo" column="saldo" />
+
+		<subclass name="br.com.ufc.banco.model.ContaPoupanca"
+			discriminator-value="P">
+		</subclass>
+		
+		<subclass name="br.com.ufc.banco.model.ContaBonus"
+			discriminator-value="B">
+			<property name="bonus" column="bonus" />
+		</subclass>
+		
+	</class>
+</hibernate-mapping>

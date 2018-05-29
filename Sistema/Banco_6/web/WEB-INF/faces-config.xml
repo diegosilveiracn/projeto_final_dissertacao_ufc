@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+
+<faces-config>
+
+  	<managed-bean>
+		<description>Cadastrar Conta</description>
+  		<managed-bean-name>CadastrarContaBean</managed-bean-name>
+    	<managed-bean-class>br.com.ufc.banco.jsf.bean.CadastrarContaBean</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+  	</managed-bean>
+	<managed-bean>
+		<description>Excluir Conta</description>
+  		<managed-bean-name>ExcluirContaBean</managed-bean-name>
+    	<managed-bean-class>br.com.ufc.banco.jsf.bean.ExcluirContaBean</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+  	</managed-bean>
+	<managed-bean>
+		<description>Creditar/Debitar Conta</description>
+  		<managed-bean-name>CreditarDebitarContaBean</managed-bean-name>
+    	<managed-bean-class>br.com.ufc.banco.jsf.bean.CreditarDebitarContaBean</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+  	</managed-bean>
+  	<managed-bean>
+		<description>Tranferir Conta</description>
+  		<managed-bean-name>TransferirContaBean</managed-bean-name>
+    	<managed-bean-class>br.com.ufc.banco.jsf.bean.TransferirContaBean</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+  	</managed-bean>  	
+  	<managed-bean>
+		<description>Render Juros Conta</description>
+  		<managed-bean-name>RenderJurosContaBean</managed-bean-name>
+    	<managed-bean-class>br.com.ufc.banco.jsf.bean.RenderJurosContaBean</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+  	</managed-bean>
+  	<managed-bean>
+		<description>Render Bônus Conta</description>
+  		<managed-bean-name>RenderBonusContaBean</managed-bean-name>
+    	<managed-bean-class>br.com.ufc.banco.jsf.bean.RenderBonusContaBean</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+  	</managed-bean>
+  	<managed-bean>
+		<description>Consultar Saldo Conta</description>
+  		<managed-bean-name>ConsultarSaldoContaBean</managed-bean-name>
+    	<managed-bean-class>br.com.ufc.banco.jsf.bean.ConsultarSaldoContaBean</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+  	</managed-bean>
+  	<managed-bean>
+		<description>Imprimir Bônus Conta</description>
+  		<managed-bean-name>ConsultarBonusContaBean</managed-bean-name>
+    	<managed-bean-class>br.com.ufc.banco.jsf.bean.ConsultarBonusContaBean</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+  	</managed-bean>
+
+	<navigation-rule>
+		<from-view-id>/index.jsp</from-view-id>
+    	<navigation-case>
+      		<to-view-id>/index.jsp</to-view-id>
+    	</navigation-case>
+  	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/cadastrarConta.jsp</from-view-id>
+    	<navigation-case>
+      		<from-action>#{CadastrarContaBean.cadastrar}</from-action>
+      		<from-outcome>result</from-outcome>
+      		<to-view-id>/pages/resultadoCadastrarConta.jsp</to-view-id>
+    	</navigation-case>
+  	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/excluirConta.jsp</from-view-id>
+    	<navigation-case>
+      		<from-action>#{ExcluirContaBean.excluir}</from-action>
+      		<from-outcome>result</from-outcome>
+      		<to-view-id>/pages/resultadoExcluirConta.jsp</to-view-id>
+    	</navigation-case>
+  	</navigation-rule>  
+	<navigation-rule>
+		<from-view-id>/pages/creditarDebitarConta.jsp</from-view-id>
+    	<navigation-case>
+      		<from-action>#{CreditarDebitarContaBean.creditar}</from-action>
+      		<from-outcome>result</from-outcome>
+      		<to-view-id>/pages/resultadoCreditarDebitarConta.jsp</to-view-id>
+    	</navigation-case>
+    	<navigation-case>
+      		<from-action>#{CreditarDebitarContaBean.debitar}</from-action>
+      		<from-outcome>result</from-outcome>
+      		<to-view-id>/pages/resultadoCreditarDebitarConta.jsp</to-view-id>
+    	</navigation-case>
+  	</navigation-rule> 
+	<navigation-rule>
+		<from-view-id>/pages/transferirConta.jsp</from-view-id>
+    	<navigation-case>
+      		<from-action>#{TransferirContaBean.transferir}</from-action>
+      		<from-outcome>result</from-outcome>
+      		<to-view-id>/pages/resultadoTransferirConta.jsp</to-view-id>
+    	</navigation-case>
+  	</navigation-rule>   	
+  	<navigation-rule>
+		<from-view-id>/pages/renderJurosConta.jsp</from-view-id>
+    	<navigation-case>
+      		<from-action>#{RenderJurosContaBean.renderJuros}</from-action>
+      		<from-outcome>result</from-outcome>
+      		<to-view-id>/pages/resultadoRenderJurosConta.jsp</to-view-id>
+    	</navigation-case>
+  	</navigation-rule> 
+  	<navigation-rule>
+		<from-view-id>/pages/renderBonusConta.jsp</from-view-id>
+    	<navigation-case>
+      		<from-action>#{RenderBonusContaBean.renderBonus}</from-action>
+      		<from-outcome>result</from-outcome>
+      		<to-view-id>/pages/resultadoRenderBonusConta.jsp</to-view-id>
+    	</navigation-case>
+  	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/consultarSaldoConta.jsp</from-view-id>
+    	<navigation-case>
+      		<from-action>#{ConsultarSaldoContaBean.consultarSaldo}</from-action>
+      		<from-outcome>result</from-outcome>
+      		<to-view-id>/pages/resultadoConsultarSaldoConta.jsp</to-view-id>
+    	</navigation-case>
+  	</navigation-rule>  	
+	<navigation-rule>
+		<from-view-id>/pages/consultarBonusConta.jsp</from-view-id>
+    	<navigation-case>
+      		<from-action>#{ConsultarBonusContaBean.consultarBonus}</from-action>
+      		<from-outcome>result</from-outcome>
+      		<to-view-id>/pages/resultadoConsultarBonusConta.jsp</to-view-id>
+    	</navigation-case>
+  	</navigation-rule>
+
+</faces-config>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Banco  -  JSP/JDBC</title>
+    </head>
+    <body>
+       	ETI - Especialização em Tecnologia da Informação<br/>
+    	UFC - Universidade Federal do Ceará
+
+    	<h1>Creditar/Debitar Conta</h1>
+    	<hr/>
+    	<form name="conta" action="/banco_2/pages/resultadoCreditarDebitarConta.jsp" method="post">
+    		<input type="hidden" name="method"/>
+    		<table>
+    			<tr>
+    				<td>Conta</td>
+    				<td>
+    					<input type="text" name="numeroConta"/>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>Valor</td>
+    				<td>
+    					<input type="text" name="valor"/>
+    				</td>
+    			</tr>   			
+    		</table>
+    		<input type="button" name="btnCreditar" value="Creditar" onclick="creditar();"/>
+    		<input type="button" name="btnDebitar" value="Debitar" onclick="debitar();"/>
+    		<input type="button" name="btnLimpar" value="Limpar" onclick="limpar();"/>
+    		<br/>
+			<br/>
+    		<a href="/banco_2/index.html">Menu Principal</a>
+    	</form>
+    </body>
+    <script type="text/javascript" language="javascript">
+    	function creditar(){
+    		document.forms[0].elements["method"].value = "creditar";
+    		document.forms[0].submit();
+    	}
+    	function debitar(){
+    		document.forms[0].elements["method"].value = "debitar";
+    		document.forms[0].submit();    	
+    	}
+    	function limpar(){
+    		document.forms[0].elements["numeroConta"].value = "";
+    		document.forms[0].elements["valor"].value = "";
+    	}
+    </script>
+</html>
